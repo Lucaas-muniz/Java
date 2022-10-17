@@ -14,7 +14,7 @@ public class Pesquisa {
     public static void main(String[] args) {
 
 //Declarando atributos.
-        String candidato1 = "Ze da Farmacia";
+        String candidato1 = "Zé da Farmácia";
         String candidato2 = "Rita da Padaria";
         float quantVotos1 = 0;
         float quantVotos2 = 0;
