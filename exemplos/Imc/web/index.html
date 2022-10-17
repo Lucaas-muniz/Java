@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+
+<!-- Desenvolvido por Lucas -->
+<html>
+    <head>
+        <title>Cálculo do IMC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            input {
+                border: 2px solid aqua;
+                margin-bottom: 10px;
+            }
+
+            button {
+                background-color:green;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>IMC</h1>
+        <form name="form-content" action="./calculo" method="POST">
+            Peso: <input type="text" name="peso" /> <br>
+            Altura: <input type="text" name="altura" />
+            <button type="submit" value="Enviar">Enviar</button>
+        </form>
+    </body>
+</html>
