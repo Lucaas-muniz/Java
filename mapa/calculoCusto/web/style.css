@@ -1,0 +1,38 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/*variables*/
+:root {
+  --main-color: white;
+  --header-background-color: black;
+  --footer-background-color: black;
+
+
+}
+
+/* Main */
+body {
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+/* Header */
+.header-content {
+  width: 100%;
+  text-align: center;
+  font-family: tahoma;
+  text-transform: uppercase;
+  padding: 2%;
+  color: var(--main-color);
+  background-color: var(--header-background-color);
+}
+
+.content {
+  width: 100%;
+  text-align: left;
+  font-family: tahoma;
+  line-height: 2;
+  margin-left: 10%;
+}
