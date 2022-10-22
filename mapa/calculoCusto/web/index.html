@@ -4,28 +4,43 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
 <html>
-    <head>
-        <title>Calculador de custo</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body>
-        <header class="header-content">
-            <h1>Calcule o custo por Km Rodado!</h1>
-        </header>
-        <main><article class="content">
-            <form name="calculador" action="./calculadorkmrodado" method="get"><br>
-                <label>Digite o modelo do carro:</label><input type="text" name="modelo"/><br>
-                <label>Digite o valor da gasolina:</label><input type="text" name="valorGas"/><br>
-                <label>Digite quantos Km/L o carro faz:</label><input type="text" name="custoPorKm"/><br>
-                <label>Digite o valor médio da revisão a cada 10 mil Km:</label><input type="text" name="valorRevisao"/><br>
-                <label>Digite o valor de 4 pneus  que rodam 50 mil Km:</label><input type="text" name="valorPneu"/><br>
-                <input id="botao" type="submit" value="Calcular" name="botao" /><br><br>
-                <label>Estima-se acréscimo de 15% no cálculo do Km rodado por desgate e devalorizaçâo do veículo.</label><br>
+
+<head>
+    <title>Calculador de custo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="header-content">
+        <h1>Calcule o custo por Km Rodado!</h1>
+    </header>
+    <main>
+        <article class="content">
+            <form name="calculador" action="./calculadorkmrodado" method="get">
+                <fieldset>
+                    <legend>Entre com os dados do veículo</legend>
+                    <label for="modelo">Digite o modelo do carro:</label><input type="text" name="modelo"
+                        id="modelo" /><br>
+                    <label for="gas">Digite o valor da gasolina:</label><input type="text" name="valorGas"
+                        id="gas" /><br>
+                    <label for="Km">Digite quantos Km/L o carro faz:</label><input type="text" name="custoPorKm"
+                        id="Km" /><br>
+                    <label for="revisao">Digite o valor médio da revisão a cada 10 mil Km:</label><input type="text"
+                        name="valorRevisao" id="revisao" /><br>
+                    <label for="pneu">Digite o valor de 4 pneus que rodam 50 mil Km:</label><input type="text"
+                        name="valorPneu" id="pneu" /><br>
+                    <input id="botao" type="submit" value="Calcular" name="botao" />
+                </fieldset>
+                <p>Estima-se acréscimo de 15% no cálculo do Km rodado por desgate e devalorização do
+                    veículo.</p><br>
             </form>
         </article>
-        </main>
-        <footer><p>Desenvolvido por Lucas Muniz</p></footer>
-    </body>
+    </main>
+    <footer>
+        <p id="rodape">Desenvolvido por Lucas Muniz</p>
+    </footer>
+</body>
+
 </html>
