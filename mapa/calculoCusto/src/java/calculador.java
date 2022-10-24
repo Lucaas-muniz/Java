@@ -16,43 +16,69 @@ public class calculador extends HttpServlet {
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request  servlet request
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /* Recebendo os parametros */
-        Double valorG;
-        valorG = Double.valueOf(request.getParameter("valorGas"));
+        /* Recebendo os parametros e convertendo se necessário*/
         String modeloCarro;
         modeloCarro = request.getParameter("modelo");
+        
+        String strValorG;
+        Double valorG;
+        strValorG = request.getParameter("valorGas");
+        valorG = Double.parseDouble(strValorG.replace(',', '.'));
+       
+        String strKm;
         Double kmLitro;
-        kmLitro = Double.valueOf(request.getParameter("custoPorKm"));
+        strKm = request.getParameter("custoPorKm");
+        kmLitro = Double.parseDouble(strKm.replace(',', '.'));
+        
+        String strRev;
         Double mediaRevisao;
-        mediaRevisao = Double.valueOf(request.getParameter("valorRevisao"));
+        strRev = request.getParameter("valorRevisao");
+        mediaRevisao = Double.parseDouble(strRev.replace(',', '.'));
+        
+        String strPn;
         Double mediaPneu;
-        mediaPneu = Double.valueOf(request.getParameter("valorPneu"));
+        strPn = request.getParameter("valorPneu");
+        mediaPneu = Double.parseDouble(strPn.replace(',', '.'));
 
         /* Efetuando os calculos */
+        Double valorRodado;
+        Double valorTotal;
+        valorRodado = (valorG / kmLitro) + (mediaRevisao / 10000) + (mediaPneu / 50000);
+        valorTotal = valorRodado * 1.15;
 
-        
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try ( PrintWriter out = response.getWriter()) {
             /* Conteudo */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Calculador de Custo</title>");
+            out.println("<link rel= 'stylesheet' href= 'style.css'/>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Resultado do Cálculo:</h1><br>");
-            out.println("<p>Veiculo modelo: " + modeloCarro + "</p>");
-            out.println("<p>Valor da gasolina: " + valorG + "</p>");
-            out.println("<p>Quantidade de Km por litro: " + kmLitro + "</p>");
-            out.println("<p>Valor médio da revisão a cada 10 mil Km: " + mediaRevisao + "</p>");
-            out.println("<p>Valor de 4 pneus  que rodam 50 mil Km: " + mediaPneu + "</p>");
+            out.println("<header class= header-content>\n"
+                    + "        <h1>Resultado do Cálculo:</h1>\n"
+                    + "    </header>");
+            out.println("<article class= content2>");
+            out.println("<p>Veículo modelo: <span>" + modeloCarro + "</span></p>");
+            out.println("<p>Valor da gasolina:<span> R$ " + valorG + "</span></p>");
+            out.println("<p>Quantidade de Km por litro: <span>" + kmLitro + " Km</span></p>");
+            out.println("<p>Valor médio da revisão a cada 10 mil Km:<span> R$ " + mediaRevisao + "</span></p>");
+            out.println("<p>Valor de 4 pneus  que rodam 50 mil Km:<span> R$ " + mediaPneu + "</span></p>");
+            out.println("<p>Valor do Km rodado: <span>" + valorRodado + "</span></p>");
+            out.println("<p>Valor do Km rodado com acréscimo de 15%: <span>" + valorTotal + "</span></p>");
+            out.println("<a href=index.html><button class= botao2>Voltar</button></a>");
+            out.println("</article>");
+            out.println("<footer>\n"
+                    + "        <p id=\"rodape\">Desenvolvido por Lucas Muniz</p>\n"
+                    + "    </footer>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -63,10 +89,10 @@ public class calculador extends HttpServlet {
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request  servlet request
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -77,10 +103,10 @@ public class calculador extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
-     * @param request  servlet request
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

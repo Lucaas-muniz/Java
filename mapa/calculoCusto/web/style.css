@@ -4,85 +4,126 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 */
 /*variables*/
 :root {
-  --main-color: white;
-  --header-background-color: black;
-  --footer-background-color: black;
-  --boder-color: black;
+    --main-color: white;
+    --header-background-color: black;
+    --footer-background-color: black;
+    --boder-color: black;
+    --div--background-color: rgb(197, 197, 197);
+    --botao-color: #696969;
+    --botao-hover-color: rgb(163, 24, 24);
 }
 
 /* main */
 body {
-  padding: 0;
-  width: 100%;
-  margin: 0;
-  font-family: tahoma;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    font-family: tahoma;
 }
 
 /* header */
 .header-content {
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 1%;
-  padding: 2%;
-  color: var(--main-color);
-  background-color: var(--header-background-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 1%;
+    padding: 2%;
+    color: var(--main-color);
+    background-color: var(--header-background-color);
 }
 
 /*main-content*/
 .content {
-  text-align: left;
-  line-height: 3;
-  margin-top: 10%;
-  font-size: 120%;
+    text-align: left;
+    line-height: 3;
+    margin-top: 5%;
+    font-size: 120%;
 }
 
 fieldset {
-  width: 50%;
-  height: 250%;
-  margin: auto;
-  border: 1px solid var(--boder-color);
-  background-color: rgb(197, 197, 197);
+    width: 50%;
+    height: 250%;
+    margin: auto;
+    border: 1px solid var(--boder-color);
+    background-color: var(--div--background-color);
 }
 
 input {
-  margin-left: 10px;
-  border: 1px solid var(--boder-color);
-  border-radius: 20px;
+    margin-left: 10px;
+    border: 1px solid var(--boder-color);
+    border-radius: 20px;
 }
 
 legend {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 #botao {
-  width: 150px;
-  height: 30px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: var(--main-color);
-  background-color: rgb(39, 39, 39);
-  cursor: pointer;
+    width: 150px;
+    height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--main-color);
+    background-color: var(--botao-color);
+    cursor: pointer;
 }
 
 #botao:hover {
-  background-color: rgb(163, 24, 24);
-  transition: .3s;
+    background-color: var(--botao-hover-color);
+    transition: .3s;
 }
 
 p {
-  text-align: center;
-  margin-top: 0;
+    text-align: center;
+    margin-top: 0;
 }
 
 /*footer*/
 #rodape {
-  background-color: var(--footer-background-color);
-  color: var(--main-color);
-  text-align: center;
-  font-size: small;
-  padding: 5%;
-  margin-top: 10%;
-  bottom: 0px;
+    background-color: var(--footer-background-color);
+    color: var(--main-color);
+    text-align: center;
+    font-size: small;
+    padding: 5%;
+    margin-top: 5%;
+    bottom: 0px;
+}
+
+/*calculador*/
+.content2{
+    background-color: var(--div--background-color);
+    border: 1px solid var(--boder-color);
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    font-size: 120%
+}
+
+.content2 p {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 10%;
+}
+
+span{
+    font-weight: bold;
+}
+
+.botao2{
+    width: 150px;
+    height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--main-color);
+    background-color: var(--botao-color);
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+
+.botao2:hover {
+    background-color: var(--botao-hover-color);
+    transition: .3s;
 }
